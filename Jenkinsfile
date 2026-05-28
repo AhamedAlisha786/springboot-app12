@@ -7,7 +7,7 @@ pipeline {
 
         stage('Clone Code') {
             steps {
-                git 'https://github.com/AhamedAlisha786/ExpenseTrackerApp123.git'
+                git 'https://github.com/AhamedAlisha786/springboot-app12.git'
             }
         }
 
