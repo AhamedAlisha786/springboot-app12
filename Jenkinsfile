@@ -14,29 +14,29 @@ pipeline {
 
         stage('Build Docker Images') {
             steps {
-                sh 'docker build -t frontend:1 ./Tracker_FrontEnd'
-                sh 'docker build -t backend:1 ./TrackerBackend'
+                sh 'sudo docker build -t frontend:1 ./Tracker_FrontEnd'
+                sh 'sudo docker build -t backend:1 ./TrackerBackend'
             }
         }
 
         stage('Deploy Frontend') {
             steps {
-                sh 'kubectl apply -f Tracker_FrontEnd/Deployment.yml'
-                sh 'kubectl apply -f Tracker_FrontEnd/Service.yml'
+                sh 'sudo kubectl apply -f Tracker_FrontEnd/Deployment.yml'
+                sh 'sudo kubectl apply -f Tracker_FrontEnd/Service.yml'
             }
         }
 
         stage('Deploy Backend') {
             steps {
-                sh 'kubectl apply -f TrackerBackend/Deployment.yml'
-                sh 'kubectl apply -f TrackerBackend/Service.yml'
+                sh 'sudo kubectl apply -f TrackerBackend/Deployment.yml'
+                sh 'sudo kubectl apply -f TrackerBackend/Service.yml'
             }
         }
 
         stage('Verify') {
             steps {
-                sh 'kubectl get pods'
-                sh 'kubectl get svc'
+                sh 'sudo kubectl get pods'
+                sh 'sudo kubectl get svc'
             }
         }
     }
