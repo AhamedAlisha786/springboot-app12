@@ -7,7 +7,8 @@ pipeline {
 
         stage('Clone Code') {
             steps {
-                git 'https://github.com/AhamedAlisha786/springboot-app12.git'
+                git branch: 'main',
+                url: 'https://github.com/AhamedAlisha786/springboot-app12.git'
             }
         }
 
