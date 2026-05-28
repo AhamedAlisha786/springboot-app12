@@ -1,4 +1,4 @@
-# Expense Tracker Apps
+# Expense Tracker App
 
 ## 📖 Description
 
