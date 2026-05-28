@@ -20,6 +20,7 @@ spec:
       containers:
         - name: backend-container
           image: backend:1
+          imagePullPolicy: Never
 
           ports:
             - containerPort: 8080
